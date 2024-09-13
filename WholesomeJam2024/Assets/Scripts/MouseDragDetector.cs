@@ -78,6 +78,7 @@ public class MouseDragDetector : MonoBehaviour
                 if (overlapsMotorcycle)
                 {
                     m_objectToDrag.transform.parent = motorCycleTransform;
+                    m_objectToDrag.transform.tag = "AttachedObject";
                     m_draggedObjectCollider = null;
                     m_objectToDrag = null;
                 }
