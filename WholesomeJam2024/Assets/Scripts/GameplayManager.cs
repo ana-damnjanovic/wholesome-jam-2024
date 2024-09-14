@@ -65,7 +65,15 @@ public class GameplayManager : MonoBehaviour
             m_doneBuildingButton.onClick.RemoveListener(OnDoneButtonClicked);
             m_doneBuildingButton.gameObject.SetActive(false);
             m_currentHamster.SetActive(true);
+            StartCoroutine(WaitAndStartMotorcycle());
         }
+    }
+
+    private IEnumerator WaitAndStartMotorcycle()
+    {
+        yield return new WaitForSeconds(2f);
+        Motorcycle motorcycle = FindObjectOfType<Motorcycle>();
+        motorcycle.StartEngine();
     }
 
     private void OnHamsterGroundCollisionDetected(GroundCollisionDetector detector)
@@ -81,6 +89,16 @@ public class GameplayManager : MonoBehaviour
         if (m_levelIndex >= m_levels.Count)
         {
             // player beat all levels
+            Debug.Log("WIN!!!");
         }
+    }
+
+    private void CleanUp()
+    {
+        for (int i = 0; i < m_spawnedHamsters.Count; ++i)
+        {
+            Destroy(m_spawnedHamsters[i]);
+        }
+        m_spawnedHamsters.Clear();
     }
 }
