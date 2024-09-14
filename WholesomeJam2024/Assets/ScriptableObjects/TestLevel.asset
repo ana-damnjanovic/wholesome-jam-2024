@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 5964103684364335384, guid: fe9761c1d5da42642a6474dddb079003, type: 3}
   m_hamsterUiSprite: {fileID: 1465816606, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 5954605228896501844, guid: f4443b2243e1fcf438f6d90c960b4f31, type: 3}
-  m_itemUiSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_dialogueLine: a square? um, okay...
+  m_itemPrefab: {fileID: 9049664619626759707, guid: 456b026e8ba013641bf5e3e956688480, type: 3}
+  m_itemUiSprite: {fileID: 21300000, guid: 15f6bde4d83a2a6489b9f2b54c9ec0de, type: 3}
+  m_dialogueLine: hm, is that a bucket?
