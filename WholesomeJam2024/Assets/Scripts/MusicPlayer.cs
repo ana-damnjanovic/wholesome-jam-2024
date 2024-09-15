@@ -32,7 +32,7 @@ public class MusicPlayer : MonoBehaviour
         m_lowPassFilter.enabled = shouldMuffle;
     }
 
-    public void PlayGameOverMusic()
+    public void StopMusic()
     {
         if (null != m_secondaryClipDelayCoroutine)
         {
@@ -40,6 +40,11 @@ public class MusicPlayer : MonoBehaviour
         }
         m_mainAudioSource.Stop();
         m_secondaryAudioSource.Stop();
+    }
+
+    public void PlayGameOverMusic()
+    {
+        StopMusic();
         m_mainAudioSource.clip = m_gameOverMusic;
         m_mainAudioSource.Play();
         m_secondaryClipDelayCoroutine = StartCoroutine(WaitAndPlaySecondaryAudio(m_policeSirenClip, 0.3f));
@@ -47,12 +52,7 @@ public class MusicPlayer : MonoBehaviour
 
     public void PlayBackgroundMusic()
     {
-        if (null != m_secondaryClipDelayCoroutine)
-        {
-            StopCoroutine(m_secondaryClipDelayCoroutine);
-        }
-        m_mainAudioSource.Stop();
-        m_secondaryAudioSource.Stop();
+        StopMusic();
         m_mainAudioSource.clip = m_backgroundMusic;
         m_mainAudioSource.Play();
     }
@@ -61,7 +61,7 @@ public class MusicPlayer : MonoBehaviour
     {
         if (0 <= level && level < m_levelStartSounds.Count)
         {
-            m_secondaryClipDelayCoroutine = StartCoroutine(WaitAndPlaySecondaryAudio(m_levelStartSounds[level], 0.5f));
+            m_secondaryClipDelayCoroutine = StartCoroutine(WaitAndPlaySecondaryAudio(m_levelStartSounds[level], 0f));
         }
     }
 

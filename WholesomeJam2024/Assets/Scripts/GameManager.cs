@@ -46,14 +46,15 @@ public class GameManager : MonoBehaviour
         m_motorcycle = FindObjectOfType<Motorcycle>();
         m_goal = FindObjectOfType<Goal>();
 
-        m_musicPlayer.MuffleSound(true);
-        m_musicPlayer.PlayBackgroundMusic();
+        //m_musicPlayer.MuffleSound(true);
+        //m_musicPlayer.PlayBackgroundMusic();
         StartNextLevel();
     }
 
     public void StartNextLevel()
     {
-        m_musicPlayer.MuffleSound(true);
+        //m_musicPlayer.MuffleSound(true);
+        m_musicPlayer.StopMusic();
         Level currentLevel = m_levels[m_levelIndex];
         GameObject hamster = GameObject.Instantiate(currentLevel.HamsterPrefab, m_hamsterSpawnTransform);
         hamster.GetComponent<GroundCollisionDetector>().GroundCollisionDetected += OnHamsterGroundCollisionDetected;
@@ -104,7 +105,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitAndStartMotorcycle()
     {
         yield return new WaitForSeconds(2f);
-        m_musicPlayer.MuffleSound(false);
+        //m_musicPlayer.MuffleSound(false);
+        m_musicPlayer.PlayBackgroundMusic();
         m_musicPlayer.PlayLevelMusic(m_levelIndex);
         m_goal.GoalReached += OnMotorcycleReachedGoal;
         m_motorcycle.StartEngine();
