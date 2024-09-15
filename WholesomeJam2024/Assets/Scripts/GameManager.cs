@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
     {
         m_gameOverUi.TryAgainRequested -= OnTryAgainRequested;
         string currentSceneName = SceneManager.GetActiveScene().name;
+        CleanUp();
         SceneManager.LoadScene(currentSceneName);
     }
 
@@ -154,6 +155,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < m_spawnedHamsters.Count; ++i)
         {
+            m_spawnedHamsters[i].GetComponent<GroundCollisionDetector>().GroundCollisionDetected -= OnHamsterGroundCollisionDetected;
             Destroy(m_spawnedHamsters[i]);
         }
         m_spawnedHamsters.Clear();

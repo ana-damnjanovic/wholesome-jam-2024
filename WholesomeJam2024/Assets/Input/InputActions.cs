@@ -51,7 +51,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""a6885154-f4a7-4e35-8091-76c1b9502082"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": ""Hold(duration=0.2)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Drag"",

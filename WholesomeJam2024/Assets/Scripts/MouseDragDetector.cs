@@ -29,6 +29,12 @@ public class MouseDragDetector : MonoBehaviour
         m_dragInputAction.canceled += OnDragInputCanceled;
     }
 
+    private void OnDisable()
+    {
+        m_dragInputAction.performed -= OnDragInputPerformed;
+        m_dragInputAction.canceled -= OnDragInputCanceled;
+    }
+
     private void OnDragInputPerformed(InputAction.CallbackContext context)
     {
         if (context.performed)

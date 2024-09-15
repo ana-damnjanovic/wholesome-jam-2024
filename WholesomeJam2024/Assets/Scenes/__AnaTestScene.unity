@@ -1101,9 +1101,9 @@ MonoBehaviour:
     m_Interactions: Hold
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 1bb974c4-7223-4c5a-a697-3ee26c890214
+      m_Id: f86909ec-3664-4fc3-857a-fa096292784d
       m_Path: <Mouse>/leftButton
-      m_Interactions: 
+      m_Interactions: Hold(duration=0.2)
       m_Processors: 
       m_Groups: 
       m_Action: Drag Input
