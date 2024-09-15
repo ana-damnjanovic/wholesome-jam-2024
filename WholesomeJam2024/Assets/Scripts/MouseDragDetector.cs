@@ -70,7 +70,7 @@ public class MouseDragDetector : MonoBehaviour
                 Transform motorCycleTransform = null;
                 for (int i = 0; i < m_overlapBuffer.Length; ++i)
                 {
-                    if (m_overlapBuffer[i].CompareTag("MotorcycleBase"))
+                    if (m_overlapBuffer[i].CompareTag("MotorcycleBase") || m_overlapBuffer[i].CompareTag("AttachedObject"))
                     {
                         overlapsMotorcycle = true;
                         motorCycleTransform = m_overlapBuffer[i].transform;

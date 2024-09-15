@@ -16,6 +16,9 @@ public class GameplayManager : MonoBehaviour
     private Transform m_hamsterSpawnTransform;
 
     [SerializeField]
+    private float m_delayBetweenHamsterDrops = 0.3f;
+
+    [SerializeField]
     private Transform m_itemStartPosition;
     
     [SerializeField]
@@ -25,21 +28,26 @@ public class GameplayManager : MonoBehaviour
 
     private List<GameObject> m_spawnedHamsters = new();
 
-    private GameObject m_currentHamster;
     private GameObject m_currentItem;
+
+    private Motorcycle m_motorcycle;
+    private Goal m_goal;
 
     private void Awake()
     {
+        m_motorcycle = FindObjectOfType<Motorcycle>();
+        m_goal = FindObjectOfType<Goal>();
+
         StartNextLevel();
     }
 
     public void StartNextLevel()
     {
         Level currentLevel = m_levels[m_levelIndex];
-        m_currentHamster = GameObject.Instantiate(currentLevel.HamsterPrefab, m_hamsterSpawnTransform);
-        m_currentHamster.GetComponent<GroundCollisionDetector>().GroundCollisionDetected += OnHamsterGroundCollisionDetected;
-        m_currentHamster.SetActive(false);
-        m_spawnedHamsters.Add(m_currentHamster);
+        GameObject hamster = GameObject.Instantiate(currentLevel.HamsterPrefab, m_hamsterSpawnTransform);
+        hamster.GetComponent<GroundCollisionDetector>().GroundCollisionDetected += OnHamsterGroundCollisionDetected;
+        hamster.SetActive(false);
+        m_spawnedHamsters.Add(hamster);
 
         m_currentItem = GameObject.Instantiate(currentLevel.ItemPrefab, m_itemStartPosition);
         m_currentItem.SetActive(false);
@@ -53,8 +61,8 @@ public class GameplayManager : MonoBehaviour
         m_levelIntroUi.UiClosed -= OnIntroUiClosed;
         m_currentItem.SetActive(true);
 
-        m_doneBuildingButton.gameObject.SetActive(true);
         m_doneBuildingButton.onClick.AddListener(OnDoneButtonClicked);
+        m_doneBuildingButton.gameObject.SetActive(true);
     }
 
     private void OnDoneButtonClicked()
@@ -64,16 +72,47 @@ public class GameplayManager : MonoBehaviour
         {
             m_doneBuildingButton.onClick.RemoveListener(OnDoneButtonClicked);
             m_doneBuildingButton.gameObject.SetActive(false);
-            m_currentHamster.SetActive(true);
-            StartCoroutine(WaitAndStartMotorcycle());
+            StartCoroutine(DropHamsters());
         }
+    }
+
+    private IEnumerator DropHamsters()
+    {
+        int numToDrop = m_spawnedHamsters.Count;
+        int numDropped = 0;
+        while (numDropped < numToDrop)
+        {
+            yield return new WaitForSeconds(m_delayBetweenHamsterDrops);
+            m_spawnedHamsters[numDropped].SetActive(true);
+            numDropped++;
+        }
+
+        StartCoroutine(WaitAndStartMotorcycle());
     }
 
     private IEnumerator WaitAndStartMotorcycle()
     {
         yield return new WaitForSeconds(2f);
-        Motorcycle motorcycle = FindObjectOfType<Motorcycle>();
-        motorcycle.StartEngine();
+        m_goal.GoalReached += OnMotorcycleReachedGoal;
+        m_motorcycle.StartEngine();
+    }
+
+    private void OnMotorcycleReachedGoal()
+    {
+        m_goal.GoalReached -= OnMotorcycleReachedGoal;
+        ResetSpawnedHamsters();
+        m_motorcycle.ResetMotorcycle();
+
+        IncrementLevel();
+    }
+
+    private void ResetSpawnedHamsters()
+    {
+        for (int iHamster = 0; iHamster < m_spawnedHamsters.Count; ++iHamster)
+        {
+            m_spawnedHamsters[iHamster].SetActive(false);
+            m_spawnedHamsters[iHamster].transform.position = m_hamsterSpawnTransform.position;
+        }
     }
 
     private void OnHamsterGroundCollisionDetected(GroundCollisionDetector detector)
@@ -90,6 +129,10 @@ public class GameplayManager : MonoBehaviour
         {
             // player beat all levels
             Debug.Log("WIN!!!");
+        }
+        else
+        {
+            StartNextLevel();
         }
     }
 
