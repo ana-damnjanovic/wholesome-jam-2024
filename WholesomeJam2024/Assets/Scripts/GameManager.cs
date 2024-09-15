@@ -2,15 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameplayManager : MonoBehaviour
+// TODO: break this up into game states
+public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private LevelIntroUi m_levelIntroUi;
 
     [SerializeField]
     private Button m_doneBuildingButton;
+
+    [SerializeField]
+    private GameOverUi m_gameOverUi;
 
     [SerializeField]
     private Transform m_hamsterSpawnTransform;
@@ -117,9 +122,18 @@ public class GameplayManager : MonoBehaviour
 
     private void OnHamsterGroundCollisionDetected(GroundCollisionDetector detector)
     {
+        m_motorcycle.StopMotorcycle();
         detector.GroundCollisionDetected -= OnHamsterGroundCollisionDetected;
         Debug.Log("game over!!!");
-        // show the game over menu
+        m_gameOverUi.TryAgainRequested += OnTryAgainRequested;
+        m_gameOverUi.ShowUi();
+    }
+
+    private void OnTryAgainRequested()
+    {
+        m_gameOverUi.TryAgainRequested -= OnTryAgainRequested;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
     public void IncrementLevel()

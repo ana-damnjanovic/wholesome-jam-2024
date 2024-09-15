@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02b3272d9d2bbc343ae0bff73c0627b1, type: 3}
-  m_Name: TestLevel
+  m_Name: Level1
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 5964103684364335384, guid: fe9761c1d5da42642a6474dddb079003, type: 3}
   m_hamsterUiSprite: {fileID: 1465816606, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
