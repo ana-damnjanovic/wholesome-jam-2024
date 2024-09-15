@@ -8,6 +8,9 @@ public class MouseDragDetector : MonoBehaviour
     [SerializeField]
     private InputAction m_dragInputAction;
 
+    [SerializeField]
+    private Camera m_camera;
+
     private GameObject m_objectToDrag;
     private Collider2D m_draggedObjectCollider;
     private Vector2 m_draggedObjectOriginalPos;
@@ -32,7 +35,7 @@ public class MouseDragDetector : MonoBehaviour
         {
             if (null == m_objectToDrag && null == m_dragCoroutine)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = m_camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
                 if (hit)
                 {
@@ -105,7 +108,7 @@ public class MouseDragDetector : MonoBehaviour
     {
         while (null != m_objectToDrag)
         {
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseWorldPos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             m_objectToDrag.transform.position = mouseWorldPos;
 
             yield return null; 
