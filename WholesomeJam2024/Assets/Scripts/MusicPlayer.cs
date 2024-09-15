@@ -40,7 +40,8 @@ public class MusicPlayer : MonoBehaviour
         }
         m_mainAudioSource.Stop();
         m_secondaryAudioSource.Stop();
-        m_mainAudioSource.PlayOneShot(m_gameOverMusic);
+        m_mainAudioSource.clip = m_gameOverMusic;
+        m_mainAudioSource.Play();
         m_secondaryClipDelayCoroutine = StartCoroutine(WaitAndPlaySecondaryAudio(m_policeSirenClip, 0.3f));
     }
 
@@ -52,7 +53,8 @@ public class MusicPlayer : MonoBehaviour
         }
         m_mainAudioSource.Stop();
         m_secondaryAudioSource.Stop();
-        m_mainAudioSource.PlayOneShot(m_backgroundMusic);
+        m_mainAudioSource.clip = m_backgroundMusic;
+        m_mainAudioSource.Play();
     }
 
     public void PlayLevelMusic(int level)

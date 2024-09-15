@@ -18,6 +18,12 @@ public class Motorcycle : MonoBehaviour
     [SerializeField]
     private Rigidbody2D m_wheel2;
 
+    [SerializeField]
+    private AudioSource m_motorcycleAudioSource;
+
+    [SerializeField]
+    private AudioClip m_motorcycleRev;
+
     private Vector3 m_motorcycleBodyStartPosition;
 
     private Rigidbody2D m_bodyRb;
@@ -67,6 +73,7 @@ public class Motorcycle : MonoBehaviour
         while (m_isActive)
         {
             m_bodyRb.AddForce(new Vector2(m_force, 0f));
+            m_motorcycleAudioSource.PlayOneShot(m_motorcycleRev);
             yield return new WaitForSeconds(1f / m_frequency);
         }
     }
