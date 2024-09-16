@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,10 +126,10 @@ TextureImporter:
       name: hamsters_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 635
-        width: 417
-        height: 422
+        x: 73
+        y: 639
+        width: 427
+        height: 409
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +147,10 @@ TextureImporter:
       name: hamsters_1
       rect:
         serializedVersion: 2
-        x: 489
-        y: 638
-        width: 434
-        height: 419
+        x: 575
+        y: 615
+        width: 428
+        height: 459
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,7 +168,7 @@ TextureImporter:
       name: hamsters_2
       rect:
         serializedVersion: 2
-        x: 959
+        x: 1035
         y: 634
         width: 443
         height: 425
@@ -176,10 +189,10 @@ TextureImporter:
       name: hamsters_3
       rect:
         serializedVersion: 2
-        x: 1434
-        y: 615
-        width: 428
-        height: 459
+        x: 1514
+        y: 638
+        width: 434
+        height: 419
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +210,10 @@ TextureImporter:
       name: hamsters_4
       rect:
         serializedVersion: 2
-        x: 1937
-        y: 639
-        width: 427
-        height: 409
+        x: 2003
+        y: 635
+        width: 417
+        height: 422
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +231,10 @@ TextureImporter:
       name: hamsters_5
       rect:
         serializedVersion: 2
-        x: 17
-        y: 99
-        width: 417
-        height: 423
+        x: 73
+        y: 108
+        width: 427
+        height: 409
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +252,10 @@ TextureImporter:
       name: hamsters_6
       rect:
         serializedVersion: 2
-        x: 488
-        y: 103
-        width: 435
-        height: 419
+        x: 575
+        y: 81
+        width: 428
+        height: 459
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,7 +273,7 @@ TextureImporter:
       name: hamsters_7
       rect:
         serializedVersion: 2
-        x: 959
+        x: 1035
         y: 99
         width: 443
         height: 424
@@ -281,10 +294,10 @@ TextureImporter:
       name: hamsters_8
       rect:
         serializedVersion: 2
-        x: 1434
-        y: 81
-        width: 428
-        height: 459
+        x: 1514
+        y: 103
+        width: 435
+        height: 419
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +315,10 @@ TextureImporter:
       name: hamsters_9
       rect:
         serializedVersion: 2
-        x: 1937
-        y: 108
-        width: 427
-        height: 409
+        x: 2003
+        y: 99
+        width: 417
+        height: 423
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
