@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: 09f0242aebe5c7148bb6e12eebf6d68a, type: 3}
   m_hamsterUiSprite: {fileID: 923939227, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 2690364675151223907, guid: d0b5721224c1a8a449c7a00c0bd812c8, type: 3}
-  m_itemUiSprite: {fileID: 21300000, guid: 5e1d3a768a24bd04ea5b5b8a25dc18cb, type: 3}
-  m_dialogueLine: oh wow, a circle! so round
+  m_itemPrefab: {fileID: 6299450922374481203, guid: e61b685d49e0f92459999637e1f6114c, type: 3}
+  m_itemUiSprite: {fileID: -1822227201, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: bat

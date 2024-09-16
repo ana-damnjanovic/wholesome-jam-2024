@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8455638479734127813
+--- !u!1001 &7592222931853076183
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -67,10 +67,10 @@ PrefabInstance:
     - target: {fileID: 5255505232779623011, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bd6a85825b0d5094897522f95faa1608, type: 3}
+      objectReference: {fileID: -958465762, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
     - target: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Name
-      value: Triangle Item
+      value: Stair Item
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2276671869911304617, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
@@ -79,20 +79,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1903449194338132204}
+      addedObject: {fileID: 4199041700077339010}
   m_SourcePrefab: {fileID: 100100000, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
---- !u!1 &2881027836718775441 stripped
+--- !u!1 &4323455023173478019 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
-  m_PrefabInstance: {fileID: 8455638479734127813}
+  m_PrefabInstance: {fileID: 7592222931853076183}
   m_PrefabAsset: {fileID: 0}
---- !u!60 &1903449194338132204
+--- !u!60 &4199041700077339010
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2881027836718775441}
+  m_GameObject: {fileID: 4323455023173478019}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -130,7 +130,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.6071923, y: -1.2945759}
-      - {x: -0.0015767813, y: 1.4958667}
-      - {x: -1.5867169, y: -1.2887021}
+    - - {x: -0.06325132, y: 0.7540227}
+      - {x: -1.1759503, y: 0.7166364}
+      - {x: -1.157047, y: -0.7317098}
+      - {x: 1.1851587, y: -0.74576575}
+      - {x: 1.1804868, y: -0.11044003}
+      - {x: -0.046908468, y: -0.12671405}
   m_UseDelaunayMesh: 0

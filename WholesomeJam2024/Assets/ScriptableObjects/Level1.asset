@@ -15,5 +15,5 @@ MonoBehaviour:
   m_hamsterPrefab: {fileID: 5964103684364335384, guid: fe9761c1d5da42642a6474dddb079003, type: 3}
   m_hamsterUiSprite: {fileID: 1465816606, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 9049664619626759707, guid: 456b026e8ba013641bf5e3e956688480, type: 3}
-  m_itemUiSprite: {fileID: 21300000, guid: 15f6bde4d83a2a6489b9f2b54c9ec0de, type: 3}
-  m_dialogueLine: hm, is that a bucket?
+  m_itemUiSprite: {fileID: 282343638, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: table

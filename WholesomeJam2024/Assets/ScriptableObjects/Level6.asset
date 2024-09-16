@@ -15,5 +15,5 @@ MonoBehaviour:
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: 6fcf0b54ac953f848b8bf5f1c5842df0, type: 3}
   m_hamsterUiSprite: {fileID: 501826461, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 8308557973069205735, guid: aa38a615dc87c9248ab758f3d377d953, type: 3}
-  m_itemUiSprite: {fileID: 21300000, guid: 4bc4d5d67a3b41c4b920d4d65a549823, type: 3}
+  m_itemUiSprite: {fileID: 598357007, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
   m_dialogueLine: <3

@@ -67,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 5255505232779623011, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f4d7cae3bbd30bc49af361d91b560f8c, type: 3}
+      objectReference: {fileID: -785686936, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
     - target: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Name
       value: Long Plank Item
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0037565231, y: 0.05071436}
+  m_Offset: {x: -0.006804943, y: 0.0049910545}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -129,5 +129,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.216405, y: 0.1096814}
+  m_Size: {x: 6.380458, y: 0.28647816}
   m_EdgeRadius: 0

@@ -15,5 +15,5 @@ MonoBehaviour:
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: bac634ef2f955894c961d6b6942efd1d, type: 3}
   m_hamsterUiSprite: {fileID: -1425204357, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 4579625474875965582, guid: 8bf8a56aa621f464e9dbc8e0f272fbd2, type: 3}
-  m_itemUiSprite: {fileID: 21300000, guid: 9a86775ba1fa3e041b47881d9b115aad, type: 3}
-  m_dialogueLine: yum, a noodle!
+  m_itemUiSprite: {fileID: 952710265, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: sword
