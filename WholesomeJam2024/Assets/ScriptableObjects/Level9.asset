@@ -16,4 +16,5 @@ MonoBehaviour:
   m_hamsterUiSprite: {fileID: 445993795, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 4323455023173478019, guid: 6fa916fe7d7d66844914d54329dc7513, type: 3}
   m_itemUiSprite: {fileID: -958465762, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: chair
+  m_dialogueLine: "Well... this is kinda large, but I\u2019m pretty sure it can fit
+    somewhere don't worry"

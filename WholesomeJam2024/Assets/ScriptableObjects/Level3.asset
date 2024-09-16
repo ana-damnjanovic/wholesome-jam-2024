@@ -16,4 +16,5 @@ MonoBehaviour:
   m_hamsterUiSprite: {fileID: -1425204357, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 4579625474875965582, guid: 8bf8a56aa621f464e9dbc8e0f272fbd2, type: 3}
   m_itemUiSprite: {fileID: 952710265, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: sword
+  m_dialogueLine: Wow, this guy must have had a great hero's battle with someone
+    else

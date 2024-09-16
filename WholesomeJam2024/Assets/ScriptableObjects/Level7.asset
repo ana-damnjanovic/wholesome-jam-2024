@@ -16,4 +16,4 @@ MonoBehaviour:
   m_hamsterUiSprite: {fileID: 1478376978, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 5851364385930772003, guid: 979eec3f48e35114a976ff7c9bce7a53, type: 3}
   m_itemUiSprite: {fileID: -785686936, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: plank time
+  m_dialogueLine: This is a really long-ass stick. Where did you even get it??
