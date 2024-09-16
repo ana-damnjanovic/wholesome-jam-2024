@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void StartNextLevel()
     {
         //m_musicPlayer.MuffleSound(true);
+        m_motorcycle.StopMotorcycle();
         m_musicPlayer.StopMusic();
         Level currentLevel = m_levels[m_levelIndex];
         GameObject hamster = GameObject.Instantiate(currentLevel.HamsterPrefab, m_hamsterSpawnTransform);
