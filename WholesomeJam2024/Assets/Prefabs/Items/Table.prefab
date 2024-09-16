@@ -50,15 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 282343638, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
     - target: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Name
-      value: Concave Item
+      value: Table
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2276671869911304617, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
@@ -130,12 +130,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.6851969, y: 0.69815266}
-      - {x: -1.4080148, y: 0.70837176}
-      - {x: -1.4080826, y: -0.7136451}
-      - {x: 1.3941529, y: -0.7175783}
-      - {x: 1.3958539, y: 0.7211128}
-      - {x: 0.6659055, y: 0.71105766}
-      - {x: 0.6461111, y: -0.25180113}
-      - {x: -0.6804857, y: -0.26133722}
+    - - {x: -0.6050441, y: 0.58460295}
+      - {x: -1.2076325, y: 0.594822}
+      - {x: -1.1943417, y: -0.6268131}
+      - {x: 1.2071303, y: -0.62406677}
+      - {x: 1.195472, y: 0.61424243}
+      - {x: 0.5657141, y: 0.61754614}
+      - {x: 0.5726377, y: -0.23176275}
+      - {x: -0.6136919, y: -0.2279406}
   m_UseDelaunayMesh: 0

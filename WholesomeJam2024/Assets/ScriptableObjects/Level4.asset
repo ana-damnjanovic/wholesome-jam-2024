@@ -16,4 +16,4 @@ MonoBehaviour:
   m_hamsterUiSprite: {fileID: -130857170, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 3758368617006824199, guid: bfc073e2be9bfcc4d9f234a2e35674a9, type: 3}
   m_itemUiSprite: {fileID: -614897420, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: thanks, it'll help me debug later
+  m_dialogueLine: 'A rubber duck. Classic. '

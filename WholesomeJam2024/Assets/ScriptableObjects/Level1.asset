@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 5964103684364335384, guid: fe9761c1d5da42642a6474dddb079003, type: 3}
   m_hamsterUiSprite: {fileID: 1465816606, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 9049664619626759707, guid: 456b026e8ba013641bf5e3e956688480, type: 3}
-  m_itemUiSprite: {fileID: 282343638, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: table
+  m_itemPrefab: {fileID: 6299450922374481203, guid: e61b685d49e0f92459999637e1f6114c, type: 3}
+  m_itemUiSprite: {fileID: -1822227201, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: A baseball bat, hmm, not bad

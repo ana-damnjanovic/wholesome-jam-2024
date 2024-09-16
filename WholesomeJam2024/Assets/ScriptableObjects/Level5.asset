@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: 9cf79b5737d380a4482668fe76faaf6c, type: 3}
   m_hamsterUiSprite: {fileID: 479685632, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 5811488733079274440, guid: 1eb3cfdf204f58e4cb0cf516290dccaf, type: 3}
-  m_itemUiSprite: {fileID: -1372701172, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: another motorcycle??
+  m_itemPrefab: {fileID: 4579625474875965582, guid: 8bf8a56aa621f464e9dbc8e0f272fbd2, type: 3}
+  m_itemUiSprite: {fileID: 952710265, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: Wow, this guy must have had a great hero's battle with someone
+    else

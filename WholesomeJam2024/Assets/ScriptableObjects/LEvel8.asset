@@ -16,4 +16,5 @@ MonoBehaviour:
   m_hamsterUiSprite: {fileID: -329669186, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
   m_itemPrefab: {fileID: 4807496832416956482, guid: 6046d7848378567469561dfa399b66af, type: 3}
   m_itemUiSprite: {fileID: -678098085, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: scissors
+  m_dialogueLine: Perfect, friend. We might need your scissors if the bomb's about
+    to explode

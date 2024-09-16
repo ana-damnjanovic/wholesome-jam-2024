@@ -50,15 +50,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.45000002
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.45000002
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.45000002
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: -958465762, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
     - target: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Name
-      value: Stair Item
+      value: Chair
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2276671869911304617, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
@@ -130,10 +130,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.06325132, y: 0.7540227}
-      - {x: -1.1759503, y: 0.7166364}
-      - {x: -1.157047, y: -0.7317098}
-      - {x: 1.1851587, y: -0.74576575}
-      - {x: 1.1804868, y: -0.11044003}
-      - {x: -0.046908468, y: -0.12671405}
+    - - {x: -0.05146239, y: 0.6715027}
+      - {x: -1.0521705, y: 0.6576936}
+      - {x: -1.05095, y: -0.6668726}
+      - {x: 1.055484, y: -0.66324604}
+      - {x: 1.0272354, y: -0.09865147}
+      - {x: -0.05280275, y: -0.10313709}
   m_UseDelaunayMesh: 0
