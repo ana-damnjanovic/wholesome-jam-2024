@@ -66,15 +66,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: -1822227201, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
     - target: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Name
-      value: Plank Item
+      value: Bat
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2276671869911304617, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
@@ -227,32 +227,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.5355523, y: -1.1715673}
-      - {x: 1.4416301, y: -1.0588608}
-      - {x: 1.2913548, y: -1.0025076}
-      - {x: 0.97201955, y: -0.6080346}
-      - {x: 0.7466064, y: -0.3262682}
-      - {x: 0.42727116, y: 0.06820475}
-      - {x: 0.3709179, y: 0.21848017}
-      - {x: -0.4931657, y: 1.3079768}
-      - {x: -0.8876387, y: 1.7588031}
-      - {x: -1.037914, y: 1.8339409}
-      - {x: -1.1881895, y: 1.8339409}
-      - {x: -1.300896, y: 1.8151563}
-      - {x: -1.432387, y: 1.7212342}
-      - {x: -1.5263091, y: 1.6273122}
-      - {x: -1.563878, y: 1.4770367}
-      - {x: -1.563878, y: 1.3643302}
-      - {x: -1.5263091, y: 1.270408}
-      - {x: -1.2821116, y: 0.8759351}
-      - {x: -0.24896817, y: -0.34505263}
-      - {x: 0.14550477, y: -0.7958788}
-      - {x: 0.70903754, y: -1.3969805}
-      - {x: 0.70903754, y: -1.5848248}
-      - {x: 0.85931295, y: -1.7914535}
-      - {x: 0.9156662, y: -1.8102379}
-      - {x: 1.253786, y: -1.8102379}
-      - {x: 1.4416301, y: -1.6599624}
-      - {x: 1.5543368, y: -1.5096871}
-      - {x: 1.5919056, y: -1.3218428}
+    - - {x: -0.6865989, y: 1.106019}
+      - {x: -0.8257262, y: 1.0512111}
+      - {x: -0.94525784, y: 0.935471}
+      - {x: -0.95105654, y: 0.79679906}
+      - {x: -0.6700653, y: 0.40085256}
+      - {x: 0.39127147, y: -0.79657143}
+      - {x: 0.43688342, y: -0.9284448}
+      - {x: 0.50579566, y: -1.0578653}
+      - {x: 0.7135752, y: -1.1019604}
+      - {x: 0.87555116, y: -0.9907637}
+      - {x: 0.95505166, y: -0.82875174}
+      - {x: 0.9112877, y: -0.68472207}
+      - {x: 0.6925722, y: -0.5601723}
+      - {x: 0.68534285, y: -0.52567136}
+      - {x: -0.53825784, y: 1.0259073}
   m_UseDelaunayMesh: 0

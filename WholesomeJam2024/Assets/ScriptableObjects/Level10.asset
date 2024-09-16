@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: ee0b3b4fd6aa1614987bf85fb0dfbf80, type: 3}
   m_hamsterUiSprite: {fileID: 1282854391, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 2881027836718775441, guid: 099b14c9f508b9743813efeb5246af7f, type: 3}
-  m_itemUiSprite: {fileID: 782475022, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: Whoa, whoa, whoa take it easy. We'll get you where you want to
-    go I promise
+  m_itemPrefab: {fileID: 5811488733079274440, guid: 1eb3cfdf204f58e4cb0cf516290dccaf, type: 3}
+  m_itemUiSprite: {fileID: -1372701172, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: You've got to be kidding me

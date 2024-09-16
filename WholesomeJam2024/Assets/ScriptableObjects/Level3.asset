@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: bac634ef2f955894c961d6b6942efd1d, type: 3}
   m_hamsterUiSprite: {fileID: -1425204357, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 4579625474875965582, guid: 8bf8a56aa621f464e9dbc8e0f272fbd2, type: 3}
-  m_itemUiSprite: {fileID: 952710265, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: Wow, this guy must have had a great hero's battle with someone
-    else
+  m_itemPrefab: {fileID: 5851364385930772003, guid: 979eec3f48e35114a976ff7c9bce7a53, type: 3}
+  m_itemUiSprite: {fileID: -785686936, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: This is a really long-ass stick. Where did you even get it??

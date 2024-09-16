@@ -22,19 +22,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2708987076942642598, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.8802369
       objectReference: {fileID: 0}
     - target: {fileID: 2708987076942642598, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2708987076942642598, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2708987076942642598, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.47453442
       objectReference: {fileID: 0}
     - target: {fileID: 2708987076942642598, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -46,19 +46,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2708987076942642598, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -56.658
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 4341978040792199009, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: -678098085, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
     - target: {fileID: 5954605228896501844, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
       propertyPath: m_Name
-      value: Convex Shape
+      value: Scissors
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2276671869911304617, guid: f065aef6d1af76b498795db87a1b782b, type: 3}
@@ -130,12 +130,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5016892, y: 0.7788059}
-      - {x: -0.6087306, y: 0.7498368}
-      - {x: -0.62167495, y: 0.09637819}
-      - {x: -1.5586145, y: 0.0913007}
-      - {x: -1.5467443, y: -0.78400075}
-      - {x: 1.559253, y: -0.78400064}
-      - {x: 1.5624497, y: 0.07347372}
-      - {x: 0.51744, y: 0.054684415}
+    - - {x: 0.25829685, y: 0.4026541}
+      - {x: -0.3123015, y: 0.39495826}
+      - {x: -0.3163867, y: 0.050679263}
+      - {x: -0.81896627, y: 0.035577074}
+      - {x: -0.81148, y: -0.39661363}
+      - {x: 0.8143248, y: -0.4004733}
+      - {x: 0.81752163, y: 0.0439715}
+      - {x: 0.2623358, y: 0.028925434}
   m_UseDelaunayMesh: 0
