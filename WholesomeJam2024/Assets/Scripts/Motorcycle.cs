@@ -5,9 +5,15 @@ using UnityEngine;
 public class Motorcycle : MonoBehaviour
 {
     [SerializeField]
-    private float m_frequency = 0.8f;
+    private float m_revFrequency = 0.8f;
     [SerializeField]
     private float m_force = 500f;
+
+    [SerializeField]
+    private float m_maxVelocity = 20f;
+
+    [SerializeField]
+    private float m_brakeForce = 100f;
 
     [SerializeField]
     private GameObject m_motorcycleBody;
@@ -30,9 +36,12 @@ public class Motorcycle : MonoBehaviour
     private bool m_isActive;
 
     private Coroutine m_motionCoroutine;
+    private Coroutine m_brakeCoroutine;
 
     [SerializeField]
     private Vector2 m_initialVelocity = new Vector2(2f, 0f);
+
+    public event System.Action Stopped = delegate { };
 
     private void Awake()
     {
@@ -56,6 +65,17 @@ public class Motorcycle : MonoBehaviour
         m_motionCoroutine = StartCoroutine(ApplyForce());
     }
 
+    public void ApplyBrakes()
+    {
+        if (m_motionCoroutine != null)
+        {
+            StopCoroutine(m_motionCoroutine);
+            m_motionCoroutine = null;
+        }
+        m_brakeCoroutine = StartCoroutine(Brake());
+
+    }
+
     public void StopMotorcycle()
     {
         m_isActive = false;
@@ -64,6 +84,12 @@ public class Motorcycle : MonoBehaviour
         {
             StopCoroutine(m_motionCoroutine);
             m_motionCoroutine = null;
+        }
+
+        if (m_brakeCoroutine != null)
+        {
+            StopCoroutine(m_brakeCoroutine);
+            m_brakeCoroutine = null;
         }
 
         m_bodyRb.velocity = Vector3.zero;
@@ -92,8 +118,23 @@ public class Motorcycle : MonoBehaviour
         while (m_isActive)
         {
             m_bodyRb.AddForce(new Vector2(m_force, 0f));
+            m_bodyRb.velocity = new Vector2(Mathf.Clamp(m_bodyRb.velocity.x, 0f, m_maxVelocity), m_bodyRb.velocity.y);
             m_motorcycleAudioSource.PlayOneShot(m_motorcycleRev);
-            yield return new WaitForSeconds(1f / m_frequency);
+            yield return new WaitForSeconds(1f / m_revFrequency);
+        }
+    }
+
+    private IEnumerator Brake()
+    {
+        if (m_isActive)
+        {
+            m_bodyRb.AddForce(-m_brakeForce * m_bodyRb.velocity);
+            while (m_bodyRb.velocity.x > 1f)
+            {
+                yield return null;
+            }
+            yield return new WaitForSeconds(0.5f);
+            Stopped.Invoke();
         }
     }
 }

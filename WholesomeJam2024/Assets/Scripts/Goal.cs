@@ -9,7 +9,28 @@ public class Goal : MonoBehaviour
     {
         if (collision.gameObject.tag == "MotorcycleBase")
         {
-            GoalReached.Invoke();
+            Motorcycle motorcycle = collision.transform.parent.GetComponent<Motorcycle>();
+            StartCoroutine(WaitForMotorcycleStopAndInvoke(motorcycle));
         }
+    }
+
+    private IEnumerator WaitForMotorcycleStopAndInvoke(Motorcycle motorcycle)
+    {
+        bool isStopped = false;
+        motorcycle.Stopped += OnMotorcycleStopped;
+
+        void OnMotorcycleStopped()
+        {
+            motorcycle.Stopped -= OnMotorcycleStopped;
+            isStopped = true;
+
+        }
+        motorcycle.ApplyBrakes();
+        while (!isStopped)
+        {
+            yield return null;
+        }
+        GoalReached.Invoke();
+
     }
 }
