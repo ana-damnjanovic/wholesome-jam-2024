@@ -2694,7 +2694,8 @@ MonoBehaviour:
   m_revFrequency: 0.8
   m_force: 10000
   m_maxVelocity: 20
-  m_brakeForce: 2000
+  m_brakeFrequency: 1
+  m_brakeForce: 10000
   m_motorcycleBody: {fileID: 1866357771}
   m_wheel1: {fileID: 416075710}
   m_wheel2: {fileID: 1146536198}
@@ -3302,7 +3303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1763285453
 SpriteRenderer:
   m_ObjectHideFlags: 0

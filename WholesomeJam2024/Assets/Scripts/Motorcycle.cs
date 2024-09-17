@@ -13,7 +13,13 @@ public class Motorcycle : MonoBehaviour
     private float m_maxVelocity = 20f;
 
     [SerializeField]
+    private float m_brakeFrequency = 3f;
+
+    [SerializeField]
     private float m_brakeForce = 100f;
+
+    [SerializeField]
+    private float m_brakeTime = 3f;
 
     [SerializeField]
     private GameObject m_motorcycleBody;
@@ -128,12 +134,18 @@ public class Motorcycle : MonoBehaviour
     {
         if (m_isActive)
         {
-            m_bodyRb.AddForce(-m_brakeForce * m_bodyRb.velocity);
-            while (m_bodyRb.velocity.x > 1f)
+            float timeElapsed = 0f;
+            Vector2 startVelocity = m_bodyRb.velocity;
+            while (timeElapsed < m_brakeTime)
             {
+                timeElapsed += Time.deltaTime;
+                float progress = timeElapsed / m_brakeTime;
+                float currentVelocity = Mathf.Lerp(startVelocity.x, 0f, progress);
+                m_bodyRb.velocity = new Vector2(currentVelocity, 0f);
                 yield return null;
             }
-            yield return new WaitForSeconds(0.5f);
+            m_bodyRb.velocity = Vector2.zero;
+            yield return new WaitForSeconds(1f);
             Stopped.Invoke();
         }
     }
