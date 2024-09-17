@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<Level> m_levels;
 
+    [SerializeField]
+    private SpriteRenderer m_nextLevelHamsterSpriteRenderer;
+
+
     private int m_levelIndex = 0;
 
     private List<GameObject> m_spawnedHamsters = new();
@@ -64,6 +68,18 @@ public class GameManager : MonoBehaviour
 
         m_currentItem = GameObject.Instantiate(currentLevel.ItemPrefab, m_itemStartPosition);
         m_currentItem.SetActive(false);
+
+
+        if (m_levelIndex + 1 < m_levels.Count)
+        {
+            m_nextLevelHamsterSpriteRenderer.sprite = m_levels[m_levelIndex + 1].HamsterUiSprite;
+        }
+        else
+        {
+            m_nextLevelHamsterSpriteRenderer.sprite = null;  // Hide the sprite if no more levels
+        }
+
+
 
         m_levelIntroUi.UiClosed += OnIntroUiClosed;
         m_levelIntroUi.ShowUi(currentLevel.HamsterUiSprite, currentLevel.ItemUiSprite, currentLevel.DialogueLine);
@@ -105,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitAndStartMotorcycle()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         //m_musicPlayer.MuffleSound(false);
         m_musicPlayer.PlayBackgroundMusic();
         m_musicPlayer.PlayLevelMusic(m_levelIndex);
