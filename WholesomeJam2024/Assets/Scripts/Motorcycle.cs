@@ -13,12 +13,6 @@ public class Motorcycle : MonoBehaviour
     private float m_maxVelocity = 20f;
 
     [SerializeField]
-    private float m_brakeFrequency = 3f;
-
-    [SerializeField]
-    private float m_brakeForce = 100f;
-
-    [SerializeField]
     private float m_brakeTime = 3f;
 
     [SerializeField]
