@@ -1,13 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class MouseDragDetector : MonoBehaviour
 {
-    [SerializeField]
-    private InputAction m_dragInputAction;
-
     [SerializeField]
     private Camera m_camera;
 
@@ -17,53 +13,45 @@ public class MouseDragDetector : MonoBehaviour
     private Coroutine m_dragCoroutine;
     private Collider2D[] m_overlapBuffer = new Collider2D[5];
 
-    private void Awake()
+    private void Update()
     {
-        Enable();
-    }
-
-    private void Enable()
-    {
-        m_dragInputAction.Enable();
-        m_dragInputAction.performed += OnDragInputPerformed;
-        m_dragInputAction.canceled += OnDragInputCanceled;
-    }
-
-    private void OnDisable()
-    {
-        m_dragInputAction.performed -= OnDragInputPerformed;
-        m_dragInputAction.canceled -= OnDragInputCanceled;
-    }
-
-    private void OnDragInputPerformed(InputAction.CallbackContext context)
-    {
-        if (context.performed)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (null == m_objectToDrag && null == m_dragCoroutine)
+            StartDragging();
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            StopDragging();
+        }
+    }
+
+    private void StartDragging()
+    {
+        if (null == m_objectToDrag && null == m_dragCoroutine)
+        {
+            Ray ray = m_camera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+            if (hit)
             {
-                Ray ray = m_camera.ScreenPointToRay(Input.mousePosition);
-                RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-                if (hit)
+                if (hit.collider.CompareTag("Draggable"))
                 {
-                    if (hit.collider.CompareTag("Draggable"))
-                    {
-                        m_objectToDrag = hit.collider.gameObject;
-                        m_draggedObjectCollider = hit.collider;
-                        m_draggedObjectCollider.enabled = false;
-                        m_draggedObjectOriginalPos = m_objectToDrag.transform.position;
-                        m_dragCoroutine = StartCoroutine(DragObject());
-                    }
+                    m_objectToDrag = hit.collider.gameObject;
+                    m_draggedObjectCollider = hit.collider;
+                    m_draggedObjectCollider.enabled = false;
+                    m_draggedObjectOriginalPos = m_objectToDrag.transform.position;
+
+                    m_dragCoroutine = StartCoroutine(DragObject());
                 }
             }
         }
     }
 
-    private void OnDragInputCanceled(InputAction.CallbackContext context)
+    private void StopDragging()
     {
-        if (context.canceled && null != m_dragCoroutine)
+        if (null != m_dragCoroutine)
         {
             StopCoroutine(m_dragCoroutine);
-
             m_dragCoroutine = null;
 
             ContactFilter2D test = new();
@@ -124,7 +112,7 @@ public class MouseDragDetector : MonoBehaviour
             Vector2 mouseWorldPos = m_camera.ScreenToWorldPoint(Input.mousePosition);
             m_objectToDrag.transform.position = mouseWorldPos;
 
-            yield return null; 
+            yield return null;
         }
     }
 }
