@@ -5,10 +5,10 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     [SerializeField]
-    private AudioSource m_mainAudioSource;
+    private AudioSource m_mainAudioSource;  
 
     [SerializeField]
-    private AudioSource m_secondaryAudioSource;
+    private AudioSource m_secondaryAudioSource;  
 
     [SerializeField]
     private AudioLowPassFilter m_lowPassFilter;
@@ -52,7 +52,6 @@ public class MusicPlayer : MonoBehaviour
 
     public void PlayBackgroundMusic()
     {
-        StopMusic();
         m_mainAudioSource.clip = m_backgroundMusic;
         m_mainAudioSource.Play();
     }
@@ -61,8 +60,20 @@ public class MusicPlayer : MonoBehaviour
     {
         if (0 <= level && level < m_levelStartSounds.Count)
         {
-            m_secondaryClipDelayCoroutine = StartCoroutine(WaitAndPlaySecondaryAudio(m_levelStartSounds[level], 0f));
+            StopMusic();
+
+            m_secondaryClipDelayCoroutine = StartCoroutine(PlayLevelStartAndThenBackgroundMusic(m_levelStartSounds[level]));
         }
+    }
+
+    private IEnumerator PlayLevelStartAndThenBackgroundMusic(AudioClip levelStartClip)
+    {
+        m_secondaryAudioSource.clip = levelStartClip;
+        m_secondaryAudioSource.Play();
+
+        yield return new WaitForSeconds(levelStartClip.length);
+
+        PlayBackgroundMusic();
     }
 
     private IEnumerator WaitAndPlaySecondaryAudio(AudioClip clip, float delay)
