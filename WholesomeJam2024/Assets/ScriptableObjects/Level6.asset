@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: 6fcf0b54ac953f848b8bf5f1c5842df0, type: 3}
   m_hamsterUiSprite: {fileID: 501826461, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 9049664619626759707, guid: 456b026e8ba013641bf5e3e956688480, type: 3}
-  m_itemUiSprite: {fileID: 282343638, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: Sure... Just put the table somewhere
+  m_itemPrefab: {fileID: 4323455023173478019, guid: 6fa916fe7d7d66844914d54329dc7513, type: 3}
+  m_itemUiSprite: {fileID: -958465762, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: Sure... Just put it somewhere

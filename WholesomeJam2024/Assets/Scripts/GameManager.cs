@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitAndStartMotorcycle()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3f);
         //m_musicPlayer.MuffleSound(false);
         m_musicPlayer.PlayBackgroundMusic();
         m_musicPlayer.PlayLevelMusic(m_levelIndex);
@@ -144,6 +144,7 @@ public class GameManager : MonoBehaviour
         {
             m_spawnedHamsters[iHamster].SetActive(false);
             m_spawnedHamsters[iHamster].transform.position = m_hamsterSpawnTransform.position;
+            m_spawnedHamsters[iHamster].transform.rotation = Quaternion.identity;
         }
     }
 

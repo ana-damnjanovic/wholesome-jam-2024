@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_hamsterPrefab: {fileID: 6711260513578565562, guid: bac634ef2f955894c961d6b6942efd1d, type: 3}
   m_hamsterUiSprite: {fileID: -1425204357, guid: 8ed529a236af6a348b7a1bf8a460edf2, type: 3}
-  m_itemPrefab: {fileID: 5851364385930772003, guid: 979eec3f48e35114a976ff7c9bce7a53, type: 3}
-  m_itemUiSprite: {fileID: -785686936, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
-  m_dialogueLine: This is a really long-ass stick. Where did you even get it??
+  m_itemPrefab: {fileID: 6299450922374481203, guid: e61b685d49e0f92459999637e1f6114c, type: 3}
+  m_itemUiSprite: {fileID: -1822227201, guid: 9f0f9bbd4e2caf6499fe814793ea5af0, type: 3}
+  m_dialogueLine: A baseball bat, hmm, not bad
