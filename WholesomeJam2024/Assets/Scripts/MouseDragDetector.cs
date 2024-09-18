@@ -7,6 +7,17 @@ public class MouseDragDetector : MonoBehaviour
     [SerializeField]
     private Camera m_camera;
 
+    [SerializeField]
+    private AudioSource m_audioSource;
+
+    [SerializeField]
+    private AudioClip m_clickSound;
+
+    [SerializeField]
+    private AudioClip m_stopDragSound;  
+
+
+
     private GameObject m_objectToDrag;
     private Collider2D m_draggedObjectCollider;
     private Vector2 m_draggedObjectOriginalPos;
@@ -40,6 +51,7 @@ public class MouseDragDetector : MonoBehaviour
                     m_draggedObjectCollider = hit.collider;
                     m_draggedObjectCollider.enabled = false;
                     m_draggedObjectOriginalPos = m_objectToDrag.transform.position;
+                    PlayClickSound();
 
                     m_dragCoroutine = StartCoroutine(DragObject());
                 }
@@ -85,6 +97,7 @@ public class MouseDragDetector : MonoBehaviour
                     m_objectToDrag.transform.tag = "AttachedObject";
                     m_draggedObjectCollider = null;
                     m_objectToDrag = null;
+                    PlayStopDragSound();
                 }
                 else
                 {
@@ -113,6 +126,22 @@ public class MouseDragDetector : MonoBehaviour
             m_objectToDrag.transform.position = mouseWorldPos;
 
             yield return null;
+        }
+    }
+
+    private void PlayClickSound()
+    {
+        if (m_audioSource != null && m_clickSound != null)
+        {
+            m_audioSource.PlayOneShot(m_clickSound);
+        }
+    }
+
+    private void PlayStopDragSound()
+    {
+        if (m_audioSource != null && m_stopDragSound != null)
+        {
+            m_audioSource.PlayOneShot(m_stopDragSound);
         }
     }
 }
