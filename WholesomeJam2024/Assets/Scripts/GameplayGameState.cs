@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// TODO: break this up into game states
-public class GameManager : MonoBehaviour
+// TODO: break this up into smaller game states
+public class GameplayGameState : MonoBehaviour
 {
     [SerializeField]
     private LevelIntroUi m_levelIntroUi;
@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SpriteRenderer m_nextLevelHamsterSpriteRenderer;
 
+    private MainMenuUi m_mainMenuUi;
+
 
     private int m_levelIndex = 0;
 
@@ -45,14 +47,15 @@ public class GameManager : MonoBehaviour
     private Motorcycle m_motorcycle;
     private Goal m_goal;
 
+    private Coroutine m_startMotorcycleCoroutine;
+
+    public event System.Action MainMenuRequested = delegate { };
+    public event System.Action TryAgainRequested = delegate { };
+
     private void Awake()
     {
         m_motorcycle = FindObjectOfType<Motorcycle>();
         m_goal = FindObjectOfType<Goal>();
-
-        //m_musicPlayer.MuffleSound(true);
-        //m_musicPlayer.PlayBackgroundMusic();
-        StartNextLevel();
     }
 
     public void StartNextLevel()
@@ -116,7 +119,7 @@ public class GameManager : MonoBehaviour
             numDropped++;
         }
 
-        StartCoroutine(WaitAndStartMotorcycle());
+        m_startMotorcycleCoroutine = StartCoroutine(WaitAndStartMotorcycle());
     }
 
     private IEnumerator WaitAndStartMotorcycle()
@@ -150,20 +153,36 @@ public class GameManager : MonoBehaviour
 
     private void OnHamsterGroundCollisionDetected(GroundCollisionDetector detector)
     {
+        if (null != m_startMotorcycleCoroutine)
+        {
+            StopCoroutine(m_startMotorcycleCoroutine);
+            m_startMotorcycleCoroutine = null;
+        }
         m_motorcycle.StopMotorcycle();
         detector.GroundCollisionDetected -= OnHamsterGroundCollisionDetected;
         m_musicPlayer.PlayGameOverMusic();
         Debug.Log("game over!!!");
         m_gameOverUi.TryAgainRequested += OnTryAgainRequested;
+        m_gameOverUi.MainMenuRequested += OnMainMenuRequested;
         m_gameOverUi.ShowUi();
+    }
+
+    private void OnMainMenuRequested()
+    {
+        m_gameOverUi.MainMenuRequested -= OnMainMenuRequested;
+        m_gameOverUi.TryAgainRequested -= OnTryAgainRequested;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        CleanUp();
+        SceneManager.LoadScene(currentSceneName);
+        MainMenuRequested.Invoke();
     }
 
     private void OnTryAgainRequested()
     {
         m_gameOverUi.TryAgainRequested -= OnTryAgainRequested;
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        m_gameOverUi.MainMenuRequested -= OnMainMenuRequested;
         CleanUp();
-        SceneManager.LoadScene(currentSceneName);
+        TryAgainRequested.Invoke();
     }
 
     public void IncrementLevel()
